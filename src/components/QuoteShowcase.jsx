@@ -82,7 +82,7 @@ export default function QuoteShowcase({ apiKey }) {
 
             {loading && (
                 <div className="mt-8 flex items-center justify-center rounded-2xl border border-dashed border-sky-400/40 bg-[#0b1224]/70 p-8 text-sky-100">
-                    Pulling reels from the vaults of Minas Tirith...
+                    Pulling quotes from the scrolls of Minas Tirith...
                 </div>
             )}
 
