@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'apple_garamondregular';
+  src: url('./assets/fonts/Apple-Garamond/applegaramond-webfont.woff2') format('woff2'),
+       url('./assets/fonts/Apple-Garamond/applegaramond-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apple_garamondbold';
+  src: url('./assets/fonts/Apple-Garamond/applegaramond-bold-webfont.woff2') format('woff2'),
+       url('./assets/fonts/Apple-Garamond/applegaramond-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'apple_garamonditalic';
+  src: url('./assets/fonts/Apple-Garamond/applegaramond-italic-webfont.woff2') format('woff2'),
+       url('./assets/fonts/Apple-Garamond/applegaramond-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'passion_oneregular';
+  src: url('./assets/fonts/Passion-One/passionone-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/Passion-One/passionone-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sf-speakeasy';
+  src: url('./assets/fonts/SF-Speakeasy/sf-speakeasy-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/SF-Speakeasy/sf-speakeasy-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* h1 {
+  font-family: 'passion_oneregular', serif;
+}
+
+p{
+  font-family: 'apple_garamondregular', serif;
+} */
