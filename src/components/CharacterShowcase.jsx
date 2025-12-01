@@ -53,13 +53,13 @@ export default function CharacterShowcase({ apiKey }) {
     }, [characters, searchTerm]);
 
     return (
-        <section className="rounded-3xl border border-[#161728] bg-[#070913]/80 p-6 shadow-[inset_0_0_30px_rgba(0,0,0,0.3)] backdrop-blur">
+        <section className="rounded-3xl border border-[#161728] p-6 backdrop-blur">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
-                    <p className="text-xs font-passion uppercase tracking-[0.4em] text-sky-400">
+                    <p className="text-xs font-passion uppercase tracking-[0.4em]">
                         Characters
                     </p>
-                    <h2 className="text-2xl font-passion text-slate-50">
+                    <h2 className="text-2xl font-passion">
                         Middle-earth Inhabitants
                     </h2>
                 </div>
@@ -76,7 +76,7 @@ export default function CharacterShowcase({ apiKey }) {
                             placeholder="Search character name..."
                             value={searchInput}
                             onChange={(e) => setSearchInput(e.target.value)}
-                            className="w-full rounded-2xl border border-[#20233e] bg-[#0e1427]/80 px-4 py-3 text-gray-100 placeholder-gray-500 outline-none transition focus:border-sky-400"
+                            className="w-full rounded-2xl border border-[#20233e] px-4 py-3 text-gray-900 placeholder-gray-500 outline-none transition"
                         />
                         <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs uppercase tracking-[0.3em] text-gray-500">
                             Search
@@ -85,7 +85,7 @@ export default function CharacterShowcase({ apiKey }) {
                     <div className="flex gap-2">
                         <button
                             type="submit"
-                            className="rounded-2xl border border-sky-400/50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-sky-200 transition hover:bg-sky-400 hover:text-[#04101c]"
+                            className="rounded-2xl border border-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-red-600 transition hover:bg-red-600 hover:text-white"
                         >
                             Apply
                         </button>
@@ -125,42 +125,42 @@ export default function CharacterShowcase({ apiKey }) {
                 {filteredCharacters.map((char) => (
                     <div
                         key={char._id}
-                        className="flex flex-col rounded-3xl border border-[#1a1f32] bg-gradient-to-b from-[#152238] via-[#0d1324] to-[#090f1c] p-6 text-left shadow-[0_15px_30px_rgba(0,0,0,0.45)] transition hover:-translate-y-1 hover:border-sky-400/40"
+                        className="flex flex-col rounded-3xl border border-red-600  p-6 text-left transition hover:-translate-y-1 hover:border-red-600"
                     >
-                        <h3 className="text-2xl font-garamondRegular text-slate-50 mb-4">
+                        <h3 className="text-2xl font-garamondRegular text-red-600 mb-4">
                             {char.name}
                         </h3>
                         <div className="grid grid-cols-2 gap-4 text-sm text-gray-400">
                             <div>
-                                <p className="text-white text-xl font-passion">Race</p>
-                                <p className="text-gray-100 text-lg font-garamondRegular">
+                                <p className="text-xl font-passion">Race</p>
+                                <p className="text-lg font-garamondRegular">
                                     {char.race || 'Unknown'}
                                 </p>
                             </div>
                             <div>
-                                <p className="text-white text-xl font-passion">Gender</p>
-                                <p className="text-gray-100 text-lg font-garamondRegular">
+                                <p className="text-xl font-passion">Gender</p>
+                                <p className="text-lg font-garamondRegular">
                                     {char.gender || 'Unknown'}
                                 </p>
                             </div>
                             <div className="col-span-2">
-                                <p className="text-white text-xl font-passion">Realm</p>
-                                <p className="text-gray-100 text-lg font-garamondRegular">
+                                <p className="text-xl font-passion">Realm</p>
+                                <p className="text-lg font-garamondRegular">
                                     {char.realm || 'Unknown'}
                                 </p>
                             </div>
                             {char.birth && (
                                 <div className="col-span-2">
-                                    <p className="text-white text-xl font-passion">Birth</p>
-                                    <p className="text-gray-100 text-lg font-garamondRegular">
+                                    <p className="text-xl font-passion">Birth</p>
+                                    <p className="text-lg font-garamondRegular">
                                         {char.birth}
                                     </p>
                                 </div>
                             )}
                             {char.death && (
                                 <div className="col-span-2">
-                                    <p className="text-white text-xl font-passion">Death</p>
-                                    <p className="text-gray-100 text-lg font-garamondRegular">
+                                    <p className="text-xl font-passion">Death</p>
+                                    <p className="text-lg font-garamondRegular">
                                         {char.death}
                                     </p>
                                 </div>
@@ -171,7 +171,7 @@ export default function CharacterShowcase({ apiKey }) {
                                 href={char.wikiUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs text-sky-400 hover:text-sky-300 hover:underline"
+                                className="text-xs text-red-600 hover:text-red-600 hover:underline"
                             >
                                 View Wiki &rarr;
                             </a>

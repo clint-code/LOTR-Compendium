@@ -72,14 +72,14 @@ export default function MovieShowcase({ apiKey }) {
 
 
     return (
-        <section className="rounded-3xl border border-[#161728] bg-[#070913]/80 p-6 shadow-[inset_0_0_30px_rgba(0,0,0,0.3)] backdrop-blur">
+        <section className="rounded-3xl border border-[#161728] p-6 backdrop-blur">
 
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div>
-                    <p className="text-xs font-passion uppercase tracking-[0.4em] text-sky-400">
+                    <p className="text-xs font-passion uppercase tracking-[0.4em]">
                         Films
                     </p>
-                    <h2 className="text-2xl font-passion text-slate-50">
+                    <h2 className="text-2xl font-passion">
                         Middle-earth Film Archive
                     </h2>
                 </div>
@@ -96,7 +96,7 @@ export default function MovieShowcase({ apiKey }) {
                             placeholder="Search movie title..."
                             value={searchInput}
                             onChange={(e) => setSearchInput(e.target.value)}
-                            className="w-full rounded-2xl border border-[#20233e] bg-[#0e1427]/80 px-4 py-3 text-gray-100 placeholder-gray-500 outline-none transition focus:border-sky-400"
+                            className="w-full rounded-2xl border border-[#20233e] px-4 py-3 text-gray-900 placeholder-gray-500 outline-none transition"
                         />
                         <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs uppercase tracking-[0.3em] text-gray-500">
                             Search
@@ -105,7 +105,7 @@ export default function MovieShowcase({ apiKey }) {
                     <div className="flex gap-2">
                         <button
                             type="submit"
-                            className="rounded-2xl border border-sky-400/50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-sky-200 transition hover:bg-sky-400 hover:text-[#04101c]"
+                            className="rounded-2xl border border-red-600 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-red-600 transition hover:bg-red-600 hover:text-white"
                         >
                             Apply
                         </button>
@@ -124,7 +124,7 @@ export default function MovieShowcase({ apiKey }) {
             </div>
 
             {loading && (
-                <div className="mt-8 flex items-center justify-center rounded-2xl border border-dashed border-sky-400/40 bg-[#0b1224]/70 p-8 text-sky-100">
+                <div className="mt-8 flex items-center justify-center rounded-2xl border border-dashed p-8 text-sky-100">
                     Pulling reels from the vaults of Minas Tirith...
                 </div>
             )}
@@ -136,7 +136,7 @@ export default function MovieShowcase({ apiKey }) {
             )}
 
             {!loading && filteredMovies.length === 0 && (
-                <div className="mt-8 rounded-2xl border border-gray-700 bg-[#0b1224]/70 p-6 text-center text-gray-400">
+                <div className="mt-8 rounded-2xl border border-gray-700 p-6 text-center text-gray-400">
                     No movies match your query. Try a different title.
                 </div>
             )}
@@ -146,47 +146,44 @@ export default function MovieShowcase({ apiKey }) {
                     <button
                         type="button"
                         key={movie._id}
-                        onClick={() => setSelectedMovie(movie)}
-                        className="group flex flex-col rounded-3xl border border-[#1a1f32] bg-gradient-to-b from-[#152238] via-[#0d1324] to-[#090f1c] p-6 text-left shadow-[0_15px_30px_rgba(0,0,0,0.45)] transition hover:-translate-y-1 hover:border-sky-400/40"
+                        className="group flex flex-col rounded-3xl border border-red-600 p-6 text-left transition hover:-translate-y-1 hover:border-red-600/40"
                     >
                         <div className="flex items-center justify-between">
-                            <h3 className="text-2xl font-garamondBold text-slate-50">
+                            <h3 className="text-2xl font-garamondBold">
                                 {movie.name}
                             </h3>
-                            <span className="rounded-full border-2 border-white px-3 py-1 text-md font-passion uppercase tracking-[0.2em] text-white">
+                            <span className="rounded-full border-2 border-red-600 px-3 py-1 text-md font-passion uppercase tracking-[0.2em] text-red-600">
                                 {movie.runtimeInMinutes} min
                             </span>
                         </div>
                         <div className="mt-5 grid grid-cols-2 gap-4 text-sm text-gray-400">
                             <div>
-                                <p className="text-white text-xl font-passion">Budget</p>
-                                <p className="text-xl text-gray-100 font-garamondBold">
+                                <p className="text-xl font-passion">Budget</p>
+                                <p className="text-xl font-garamondBold">
                                     ${movie.budgetInMillions}M
                                 </p>
                             </div>
                             <div>
-                                <p className="text-white text-xl font-passion">Box Office</p>
-                                <p className="text-xl text-gray-100 font-garamondBold">
+                                <p className="text-xl font-passion">Box Office</p>
+                                <p className="text-xl font-garamondBold">
                                     ${movie.boxOfficeRevenueInMillions}M
                                 </p>
                             </div>
                             <div>
-                                <p className="text-white text-xl font-passion">Awards</p>
-                                <p className="text-xl text-gray-100 font-garamondBold">
+                                <p className="text-xl font-passion">Awards</p>
+                                <p className="text-xl font-garamondBold">
                                     {movie.academyAwardWins} wins ·{' '}
                                     {movie.academyAwardNominations} noms
                                 </p>
                             </div>
                             <div>
-                                <p className="text-white text-xl font-passion">Rotten Tomatoes</p>
-                                <p className="text-xl text-gray-100 font-garamondBold">
+                                <p className="text-xl font-passion">Rotten Tomatoes</p>
+                                <p className="text-xl font-garamondBold">
                                     {movie.rottenTomatoesScore}%
                                 </p>
                             </div>
                         </div>
-                        <p className="mt-5 text-sm text-gray-400 font-garamondItalic">
-                            Click for full production stats
-                        </p>
+
                     </button>
                 ))}
             </div>

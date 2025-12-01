@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    background-color: #F0F0F0;
+  }
+  h1, h2, h3, a {
+    color: #ab332b;
+  }
+  p {
+    color: #252525;
+  }
+}
+
 @font-face {
   font-family: 'apple_garamondregular';
   src: url('./assets/fonts/Apple-Garamond/applegaramond-webfont.woff2') format('woff2'),
